@@ -1,0 +1,3 @@
+{
+  "fieldsAllowedToEdit": ["username", "email", "password", "role"]
+}
