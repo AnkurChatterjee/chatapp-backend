@@ -1,4 +1,6 @@
 module.exports = {
   ...require("./sendMessage"),
-  ...require("./likeMessage")
+  ...require("./likeMessage"),
+  ...require("./getAllMessagesOfGroup"),
+  ...require("./deleteMessage"),
 };

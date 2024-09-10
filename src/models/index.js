@@ -2,6 +2,7 @@ require('dotenv').config();
 const fs = require("fs");
 const path = require("path");
 const Sequelize = require("sequelize");
+
 const db = {};
 
 const { DB_NAME, DB_TYPE, DB_HOST, DB_PASS, DB_PORT, DB_USER, SCHEMA } =
