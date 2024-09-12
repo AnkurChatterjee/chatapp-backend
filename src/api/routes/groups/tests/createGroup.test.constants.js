@@ -27,7 +27,7 @@ module.exports = {
     text: "Creating group successfully",
     apiEndpoint: "/chatapp/api/group/create-new-group",
     reqBody: {
-      groupName: `test-group-${Math.random()*10**4}`,
+      groupName: `test-group-${Math.random() * 10 ** 4}`,
     },
     resStatusCode: 200,
     resBody: {

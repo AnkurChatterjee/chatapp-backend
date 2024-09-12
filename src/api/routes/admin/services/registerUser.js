@@ -13,10 +13,10 @@ const {
 const registerUser = async (req, res) => {
   const { userName, userEmail, password, userRole } = req.body;
   const executorID = req.user.userId;
-  if(!userName || !userEmail || !password || !userRole) {
+  if (!userName || !userEmail || !password || !userRole) {
     return res.status(400).send({
-      status: 'Fail',
-      message: 'Required fields missing in request body'
+      status: "Fail",
+      message: "Required fields missing in request body",
     });
   }
   try {
@@ -44,7 +44,10 @@ const registerUser = async (req, res) => {
         updateObj.enabled = 1;
         updateObj.modifiedon = moment(new Date()).format("YYYY-MM-DD HH:mm:ss");
         updateObj.modifiedby = executorID;
-        const updateResponse = await updateUserDetails(userData[0].id, updateObj);
+        const updateResponse = await updateUserDetails(
+          userData[0].id,
+          updateObj
+        );
         if (updateResponse && updateResponse.length === 0) {
           throw new Error("Error while enabling user");
         }

@@ -13,9 +13,6 @@ package-lock.json
 #Optional npm cache directory
 .npm
 
-# testing
-/coverage
-
 # production
 /build
 

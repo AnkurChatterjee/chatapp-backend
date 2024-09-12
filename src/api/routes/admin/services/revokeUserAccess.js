@@ -1,15 +1,17 @@
-const moment = require('moment');
+const moment = require("moment");
 const { Logger } = require("../../../../lib/Logger");
 const { getUserDetails } = require("../../../../repositories/getUserLoginData");
-const {updateUserDetails} = require('../../../../repositories/updateUserData');
+const {
+  updateUserDetails,
+} = require("../../../../repositories/updateUserData");
 
 const revokeUserAccess = async (req, res) => {
   const { userId } = req.body;
   const executorID = req.user.userId;
-  if(!userId) {
+  if (!userId) {
     return res.status(400).send({
-      status: 'Fail',
-      message: 'Required fields missing in request body'
+      status: "Fail",
+      message: "Required fields missing in request body",
     });
   }
   try {

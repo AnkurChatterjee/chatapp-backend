@@ -55,8 +55,8 @@ module.exports = {
     },
     resStatusCode: 400,
     resBody: {
-        status: "Fail",
-        message: "Email id already exists for a different user"
+      status: "Fail",
+      message: "Email id already exists for a different user",
     },
   },
   test5: {
@@ -64,14 +64,14 @@ module.exports = {
     apiEndpoint: "/chatapp/api/admin/add-user-to-role",
     reqBody: {
       userName: "Anuj Paul",
-      userEmail: `anujp.${Math.random()*10**5}@gmail.com`,
+      userEmail: `anujp.${Math.random() * 10 ** 5}@gmail.com`,
       password: "anuj@1234",
       userRole: "user",
     },
     resStatusCode: 200,
     resBody: {
-        status: "Success",
-        message: "User has been registered successfully"
+      status: "Success",
+      message: "User has been registered successfully",
     },
   },
 };

@@ -27,6 +27,6 @@ const jwtVerify = (token) => {
 };
 
 module.exports = {
-    jwtSign,
-    jwtVerify
-}
+  jwtSign,
+  jwtVerify,
+};

@@ -39,7 +39,7 @@ const authenticateUser = async (req, res) => {
       throw new Error(userDetails.message);
     }
     return res.send({
-      status: 'Success',
+      status: "Success",
       ...userDetails.data,
       accessToken: token,
     });

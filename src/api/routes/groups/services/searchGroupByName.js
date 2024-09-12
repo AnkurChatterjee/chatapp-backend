@@ -21,16 +21,16 @@ const searchGroupByName = async (req, res) => {
     }
     const groups = [];
     dbData.forEach((elem) => {
-        const groupObj = {};
-        groupObj.id = elem.id;
-        groupObj.groupName = elem.groupname;
-        groupObj.createdOn = elem.createdon;
-        groupObj.createdBy = elem.createdby;
-        groups.push(groupObj);
-    })
+      const groupObj = {};
+      groupObj.id = elem.id;
+      groupObj.groupName = elem.groupname;
+      groupObj.createdOn = elem.createdon;
+      groupObj.createdBy = elem.createdby;
+      groups.push(groupObj);
+    });
     return res.send({
       status: "Success",
-      groups
+      groups,
     });
   } catch (err) {
     Logger.error("Error while searching group ", err.message);

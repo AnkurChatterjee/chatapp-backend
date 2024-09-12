@@ -43,7 +43,7 @@ const addMembersToGroup = async (req, res) => {
         message: "Group not found",
       });
     }
-    
+
     //group members can be added by group creator, admin and other members of that group
     const isUserGroupMember = await checkForUserInGroup(groupId, userId);
     if (
@@ -72,7 +72,7 @@ const addMembersToGroup = async (req, res) => {
       }
       //checking if user already exists as a member in the group
       const isUserGroupMember = await checkForUserInGroup(groupId, userid);
-      if(isUserGroupMember) {
+      if (isUserGroupMember) {
         continue;
       }
       const userObj = {};

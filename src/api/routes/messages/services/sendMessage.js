@@ -28,7 +28,7 @@ const sendMessage = async (req, res) => {
     }
     //checking if the user is a member of the group or if user is an admin
     const isUserGroupMember = await checkForUserInGroup(groupId, userId);
-    if (!isUserGroupMember && role !== 'admin') {
+    if (!isUserGroupMember && role !== "admin") {
       return res.status(401).send({
         status: "Fail",
         message: "You are not a member of this group",

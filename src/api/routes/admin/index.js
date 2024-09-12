@@ -1,6 +1,10 @@
 const express = require("express");
 
-const { userRegistration, editUserParams, revokeUser } = require("./controllers");
+const {
+  userRegistration,
+  editUserParams,
+  revokeUser,
+} = require("./controllers");
 
 const { authenticateJWT, authenticateAdmin } = require("../../middlewares");
 
@@ -18,13 +22,13 @@ router.patch(
   authenticateJWT,
   authenticateAdmin,
   editUserParams
-)
+);
 
 router.patch(
   "/revoke-user-access",
   authenticateJWT,
   authenticateAdmin,
   revokeUser
-)
+);
 
 module.exports = router;

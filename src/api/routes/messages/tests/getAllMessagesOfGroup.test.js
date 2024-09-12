@@ -14,27 +14,27 @@ describe("Testing get all messages of group without sending jwt token", () => {
 });
 
 describe("Testing get all messages of group by an user who is not group member or admin", () => {
-    let accessToken;
-    //set up user token before test
-    beforeAll(async () => {
-      const loginResponse = await request(app)
-        .post("/chatapp/api/auth/login")
-        .send({
-          email: "nitishp@gmail.com",
-          password: "nitish@1234",
-        });
-      accessToken = loginResponse.body.accessToken;
-    });
-  
-    test(mockTestCases?.[`test2`].text, async () => {
-      const response = await request(app)
-        .get(mockTestCases?.[`test2`].apiEndpoint)
-        .set("Authorization", `chatapp-token=${accessToken}`)
-        .send(mockTestCases?.[`test2`].reqBody);
-      expect(response.statusCode).toBe(mockTestCases?.[`test2`].resStatusCode);
-      expect(response.body).toEqual(mockTestCases?.[`test2`].resBody);
-    });
+  let accessToken;
+  //set up user token before test
+  beforeAll(async () => {
+    const loginResponse = await request(app)
+      .post("/chatapp/api/auth/login")
+      .send({
+        email: "nitishp@gmail.com",
+        password: "nitish@1234",
+      });
+    accessToken = loginResponse.body.accessToken;
   });
+
+  test(mockTestCases?.[`test2`].text, async () => {
+    const response = await request(app)
+      .get(mockTestCases?.[`test2`].apiEndpoint)
+      .set("Authorization", `chatapp-token=${accessToken}`)
+      .send(mockTestCases?.[`test2`].reqBody);
+    expect(response.statusCode).toBe(mockTestCases?.[`test2`].resStatusCode);
+    expect(response.body).toEqual(mockTestCases?.[`test2`].resBody);
+  });
+});
 
 describe("Testing get all messages of group by a member", () => {
   let accessToken;
